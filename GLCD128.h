@@ -13,7 +13,6 @@ extern void GLCD_xy(uint8_t x, uint8_t y);     /* set English character position
 extern void GLCD_xy_row(uint8_t x, uint8_t y, uint8_t row); /* set character upper/lower row */
 extern void GLCD_English(uint8_t Ecode);       /* display a 8x16 Dot English(ASCII) */
 extern void GLCD_Korean(uint16_t Kcode);       /* display a 16x16 Dot Korean */
-extern unsigned int KS_code_conversion(unsigned int KSSM);  /* convert KSSM(완성형) to KS(조합형) */
 extern void GLCD_string(uint8_t x, uint8_t y, char *string);  /* display a string */
 
 #endif /* __GLCD128_H__ */
