@@ -5,12 +5,11 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
 unsigned char cursor;
 
-ISR(SIG_UART1_RECV)
+ISR(USART1_RX_vect)
 {                                              /* UART1 interrupt function */
   LCD_data(UDR1);                              // display a character
   cursor++;                                    // 16 character OK ?

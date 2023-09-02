@@ -5,7 +5,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
 unsigned int INT6_count, INT7_count;
@@ -37,7 +36,7 @@ void LCD_3d(unsigned int number)
   LCD_data(i + '0');
 }
 
-ISR(SIG_INTERRUPT6)
+ISR(INT6_vect)
 {                                              /* INT6 interrupt function */
   INT6_count++;                                // increment INT6 counter
   LCD_command(0x8D);                           // display INT6 counter
@@ -48,7 +47,7 @@ ISR(SIG_INTERRUPT6)
   PORTB = 0x00;                                // turn off LED1
 }
 
-ISR(SIG_INTERRUPT7)
+ISR(INT7_vect)
 {                                              /* INT7 interrupt function */
   INT7_count++;                                // increment INT7 counter
   LCD_command(0xCD);                           // display INT7 counter

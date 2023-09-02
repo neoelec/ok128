@@ -5,10 +5,9 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
-ISR(SIG_OUTPUT_COMPARE1A)
+ISR(TIMER1_COMPA_vect)
 {                                              /* OC1A interrupt function */
   PORTB = PORTB ^ 0x80;                        // toggle LED4
 }

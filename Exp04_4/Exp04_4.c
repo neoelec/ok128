@@ -5,7 +5,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
 volatile unsigned int second;
@@ -53,7 +52,7 @@ void Display_time(void)
   LCD_2digit(second % 100);
 }
 
-ISR(SIG_OUTPUT_COMPARE1A)
+ISR(TIMER1_COMPA_vect)
 {                                              /* OC1A interrupt function */
   second++;                                    // increment 1/100 second
   if (second == 6000) {                        // second = 60 ?

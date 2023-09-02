@@ -5,7 +5,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
 volatile unsigned int OC1A_count, OC3A_count;  // interrupt counter
@@ -55,13 +54,13 @@ void LCD_5d(unsigned int number)
   LCD_data(i + '0');
 }
 
-ISR(SIG_OUTPUT_COMPARE1A)
+ISR(TIMER1_COMPA_vect)
 {                                              /* OC1A interrupt function */
   PORTB = PORTB ^ 0x80;                        // toggle LED4
   OC1A_count++;                                // increment OC1A interrupt count
 }
 
-ISR(SIG_OUTPUT_COMPARE3A)
+ISR(TIMER3_COMPA_vect)
 {                                              /* OC3A interrupt function */
   PORTB = PORTB ^ 0x40;                        // toggle LED3
   OC3A_count++;                                // increment OC3A interrupt count

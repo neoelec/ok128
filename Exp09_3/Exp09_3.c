@@ -5,7 +5,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include <avr/pgmspace.h>
 #include "OK128.h"
 
@@ -23,7 +22,7 @@ const unsigned char sin_table[] PROGMEM = {    // sine wave data table
   0x35, 0x3C, 0x43, 0x4A, 0x51, 0x59, 0x60, 0x68, 0x70, 0x78
 };
 
-ISR(SIG_OUTPUT_COMPARE1A)
+ISR(TIMER1_COMPA_vect)
 {                                              /* OC1A interrupt function */
   PORTB = pgm_read_byte(&sin_table[i]);        // output data to D/A
   i++;

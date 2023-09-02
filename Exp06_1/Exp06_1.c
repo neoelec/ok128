@@ -5,7 +5,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
 volatile unsigned char second, minute, hour, ampm;
@@ -16,7 +15,7 @@ void LCD_2digit(unsigned char number)
   LCD_data(number % 10 + '0');                 // 10^0
 }
 
-ISR(SIG_OUTPUT_COMPARE1A)
+ISR(TIMER1_COMPA_vect)
 {                                              /* OC1A interrupt function */
   second++;                                    // increment second
   if (second == 60) {                          // if second = 60, second = 0

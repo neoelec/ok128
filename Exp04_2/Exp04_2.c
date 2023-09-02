@@ -5,12 +5,11 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/signal.h>
 #include "OK128.h"
 
 volatile unsigned char interrupt_count;        // interrupt counter
 
-ISR(SIG_OUTPUT_COMPARE0)
+ISR(TIMER0_COMP_vect)
 {                                              /* OC0 interrupt function */
   PORTB = PORTB ^ 0x80;                        // toggle LED4
   interrupt_count--;
