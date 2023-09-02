@@ -73,9 +73,9 @@ int main(void)
     LCD_command(0xC9);                         // display write data
     LCD_2hex(0x55);
     while (!eeprom_is_ready()) ;               // if EEPROM is ready,
-    eeprom_wb(address, 0x55);                  //    write 0x55
+    eeprom_write_byte((uint8_t *) address, 0x55); //    write 0x55
     while (!eeprom_is_ready()) ;               // if EEPROM is ready,
-    byte = eeprom_rb(address);                 //    read
+    byte = eeprom_read_byte((const uint8_t *)address);  //    read
     LCD_command(0xCE);                         // display read data
     LCD_2hex(byte);
     Delay_ms(500);
@@ -87,9 +87,9 @@ int main(void)
     LCD_command(0xC9);                         // display write data
     LCD_2hex(0xAA);
     while (!eeprom_is_ready()) ;               // if EEPROM is ready,
-    eeprom_wb(address, 0xAA);                  //    write 0xAA
+    eeprom_write_byte((uint8_t *) address, 0xAA); //    write 0xAA
     while (!eeprom_is_ready()) ;               // if EEPROM is ready,
-    byte = eeprom_rb(address);                 //    read
+    byte = eeprom_read_byte((const uint8_t *)address);  //    read
     LCD_command(0xCE);                         // display read data
     LCD_2hex(byte);
     Delay_ms(500);
