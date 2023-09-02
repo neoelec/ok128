@@ -6,7 +6,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/signal.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 volatile unsigned char second, minute, hour, ampm;
 

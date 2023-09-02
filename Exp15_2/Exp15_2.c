@@ -6,7 +6,7 @@
 #include <avr/io.h>
 #include <stdio.h>
 #include <avr/pgmspace.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 const unsigned char font[95][5] PROGMEM = {    /* 5x7 ASCII character font */
   { 0x00, 0x00, 0x00, 0x00, 0x00 },            // 0x20 space

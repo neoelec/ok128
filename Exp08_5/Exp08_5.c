@@ -5,7 +5,7 @@
 
 #include <avr/io.h>
 #include <math.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 void LCD_s1d2(float number)
 {                                              /* floating-point number x.xx */

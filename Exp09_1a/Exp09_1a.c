@@ -5,7 +5,7 @@
 
 #include <avr/io.h>
 #include <avr/pgmspace.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 const unsigned char tri_table[] PROGMEM = {    // triangular wave data table
   0x80, 0x84, 0x88, 0x8C, 0x90, 0x94, 0x98, 0x9C, 0xA0, 0xA4,

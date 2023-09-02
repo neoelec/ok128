@@ -4,7 +4,7 @@
 /*                        Designed and programmed by Duck-Yong Yoon in 2005.  */
 
 #include <avr/io.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 unsigned char RX1_char_scan(void)
 {                                              /* receive a character by USART1 */

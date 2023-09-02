@@ -6,7 +6,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/signal.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 ISR(SIG_OUTPUT_COMPARE1A)
 {                                              /* OC1A interrupt function */

@@ -4,8 +4,8 @@
 /*                        Designed and programmed by Duck-Yong Yoon in 2005.  */
 
 #include <avr/io.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
-#include "c:\AvrEdit\OK128c\GLCD128.h"
+#include "OK128.h"
+#include "GLCD128.h"
 
 void GLCD_2hex(unsigned char number)
 {                                              /* display 2-digit hex number */

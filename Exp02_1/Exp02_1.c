@@ -4,7 +4,7 @@
 /*                        Designed and programmed by Duck-Yong Yoon in 2005.  */
 
 #include <avr/io.h>
-#include "c:\AvrEdit\OK128c\OK128.h"
+#include "OK128.h"
 
 int main(void)
 {
