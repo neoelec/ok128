@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------------------- */
-/*  OK128.h : I/O Address Definition & User Function for OK-128 V2.2 Training Kit  */
+/*  OK128.h : I/O Address Definition & User Function for OK-128 V3.0 Training Kit  */
 /* ------------------------------------------------------------------------------- */
 #define LCD_DATABUS (*(volatile unsigned char *)0x2000) // LCD/GLCD data
                   // 7-segment LED pattern
@@ -24,7 +24,7 @@
 #define RTC_FLAG (*(volatile unsigned char *)0x230F)
 
 void MCU_initialize(void)
-{                                              /* initialize ATmege128 MCU */
+{                                              /* initialize ATmega128 MCU & OK-128 kit */
   MCUCR = 0x80;                                // enable external memory and I/O
   XMCRA = 0x44;                                // 0x1100-0x7FFF=1 wait, 0x8000-0xFFFF=0 wait
   XMCRB = 0x80;                                // enable bus keeper, use PC0-PC7 as address
@@ -36,7 +36,9 @@ void MCU_initialize(void)
   DDRE = 0x0C;                                 // PORTE = output for PE3, PE2
   PORTE = 0x00;
   DDRF = 0x00;                                 // PORTF = input (KEY1-4)
+  PORTF = 0x00;
 
+  LCD_CONTROL = 0x00;                          // clear LCD/GLCD control signal
   DIG_SELECT = 0x00;                           // clear 7-segment LED
 }
 
@@ -106,10 +108,6 @@ void LCD_string(unsigned char command, char *string)
 
 void LCD_initialize(void)
 {                                              /* initialize text LCD module */
-  LCD_CONTROL = 0x03;                          // E = 1, Rs = 1 (dummy write)
-  LCD_CONTROL = 0x02;                          // E = 0, Rs = 1
-  Delay_ms(2);
-
   LCD_command(0x38);                           // function set(8 bit, 2 line, 5x7 dot)
   LCD_command(0x0C);                           // display control(display ON, cursor OFF)
   LCD_command(0x06);                           // entry mode set(increment, not shift)
@@ -120,7 +118,7 @@ void LCD_initialize(void)
 unsigned char key_flag = 0;
 
 unsigned char Key_input(void)
-{                                              /* input key SW1 - SW4 */
+{                                              /* input key KEY1 - KEY4 */
   unsigned char key;
 
   key = PINF & 0xF0;                           // any key pressed ?
