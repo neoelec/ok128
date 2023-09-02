@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <avr/eeprom.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 void LCD_4hex(unsigned int number)
 {                                              /* display 4-digit hex number */

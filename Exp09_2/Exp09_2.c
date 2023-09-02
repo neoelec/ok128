@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <avr/pgmspace.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 const unsigned char sin_table[] PROGMEM = {    // sine wave data table
   0x80, 0x88, 0x90, 0x98, 0xA0, 0xA7, 0xAF, 0xB6, 0xBD, 0xC4,

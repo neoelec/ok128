@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <math.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 int main(void)
 {

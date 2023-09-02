@@ -6,7 +6,8 @@
 #include <avr/io.h>
 #include <stdio.h>
 #include <math.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 /* -------------------------------------------------------------------------- */
 /*   Graphic LCD Module : Hyundai LCD,HG12605NY-LY,128x64 dot,LED backlight   */

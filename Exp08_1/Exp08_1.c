@@ -4,7 +4,8 @@
 /*                        Designed and programmed by Duck-Yong Yoon in 2005.  */
 
 #include <avr/io.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 void LCD_4hex(unsigned int number)
 {                                              /* display 4-digit hex number */

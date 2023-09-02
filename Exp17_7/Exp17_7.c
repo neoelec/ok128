@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <stdio.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 int LCD_putchar(char c, FILE * fp)
 {                                              /* print a character to LCD */

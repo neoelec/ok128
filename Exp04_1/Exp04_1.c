@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 ISR(TIMER1_COMPA_vect)
 {                                              /* OC1A interrupt function */

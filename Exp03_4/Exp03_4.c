@@ -4,7 +4,8 @@
 /*                        Designed and programmed by Duck-Yong Yoon in 2005.  */
 
 #include <avr/io.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 void LCD_1d1(float number)
 {                                              /* floating-point number x.x */

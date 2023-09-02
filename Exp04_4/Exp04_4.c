@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 volatile unsigned int second;
 volatile unsigned char minute, hour;

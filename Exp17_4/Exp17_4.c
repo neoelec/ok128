@@ -5,7 +5,8 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "OK128.h"
+
+#include <OK128.h>
 
 unsigned int INT6_count, INT7_count;
 
