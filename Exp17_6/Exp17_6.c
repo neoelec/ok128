@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "OK128.h"
 
-int LCD_putchar(char c)
+int LCD_putchar(char c, FILE * fp)
 {                                              /* print a character to LCD */
   if ((c < 0x20) | (c > 0x7E))                 // check from 0x20 to 0x7E
     return 0;
@@ -29,7 +29,7 @@ int main(void)
   LCD_string(0xC0, "  to LCD module ");
   Beep();
 
-  fdevopen(LCD_putchar, 0, 0);                 // stdout and stderr device open
+  fdevopen(LCD_putchar, NULL);                 // stdout and stderr device open
 
   while (1) {
     switch (Key_input()) {                     // key input

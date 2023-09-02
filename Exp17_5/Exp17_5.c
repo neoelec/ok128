@@ -16,10 +16,10 @@ void USART0_initialize(void)
   UCSR0C = 0x06;                               // no parity, 1 stop, 8 data
 }
 
-int USART0_putchar(char c)
+int USART0_putchar(char c, FILE * fp)
 {                                              /* print a character to USART0 */
   if (c == '\n')                               // process CR(carriage return)
-    USART0_putchar('\r');
+    USART0_putchar('\r', NULL);
 
   loop_until_bit_is_set(UCSR0A, UDRE0);        // Tx ready ?
   UDR0 = c;                                    // if yes, print
@@ -40,7 +40,7 @@ int main(void)
   Beep();
 
   USART0_initialize();                         // initialize USART0
-  fdevopen(USART0_putchar, 0, 0);              // stdout and stderr device open
+  fdevopen(USART0_putchar, NULL);              // stdout and stderr device open
 
   while (1) {
     switch (Key_input()) {                     // key input

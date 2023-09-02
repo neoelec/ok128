@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "OK128.h"
 
-int LCD_putchar(char c)
+int LCD_putchar(char c, FILE * fp)
 {                                              /* print a character to LCD */
   if ((c < 0x20) | (c > 0x7E))                 // check from 0x20 to 0x7E
     return 0;
@@ -25,10 +25,10 @@ void USART0_initialize(void)
   UCSR0C = 0x06;                               // no parity, 1 stop, 8 data
 }
 
-int USART0_putchar(char c)
+int USART0_putchar(char c, FILE * fp)
 {                                              /* print a character to USART0 */
   if (c == '\n')                               // process CR(carriage return)
-    USART0_putchar('\r');
+    USART0_putchar('\r', NULL);
 
   loop_until_bit_is_set(UCSR0A, UDRE0);        // Tx ready ?
   UDR0 = c;                                    // if yes, print
@@ -55,7 +55,7 @@ int main(void)
     switch (Key_input()) {                     // key input
     case 0xE0:
       PORTB = 0x10;                            // SW1 ?
-      fp = fdevopen(LCD_putchar, 0, 0);
+      fp = fdevopen(LCD_putchar, NULL);
       LCD_command(0xC0);
       printf(" i=%03d  x=%5.3f ", i++, x);
       fclose(fp);
@@ -63,7 +63,7 @@ int main(void)
       break;
     case 0x70:
       PORTB = 0x80;                            // SW4 ?
-      fp = fdevopen(USART0_putchar, 0, 0);
+      fp = fdevopen(USART0_putchar, NULL);
       printf(" i=%03d  x=%5.3f\n", i++, x);
       fclose(fp);
       x += 0.001;
