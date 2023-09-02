@@ -60,10 +60,10 @@ int main(void)
   LCD_string(0xC0, " English/Korean ");
   Beep();
 
-  GLCD_string(0, 0, "2005‘e 03¶© 01·©");       // display title
-  GLCD_string(1, 0, " µ¡¸å  12:00:00 ");
-  GLCD_string(2, 0, "    (ÑÁ¶a·©)    ");
-  GLCD_string(3, 0, "?¸‹¡µ¥  00.0•¡");
+  GLCD_string(0, 0, "2005ë…„ 03ì›” 01ì¼");    // display title
+  GLCD_string(1, 0, " ì˜¤ì „  12:00:00 ");
+  GLCD_string(2, 0, "    (í™”ìš”ì¼)    ");
+  GLCD_string(3, 0, "?ì¬ê¸°ì˜¨  00.0ë„");
 
   ADMUX = 0x09;                                // ADC1*10 with exterenal Aref
   Delay_us(200);                               // (diferential input)
@@ -79,7 +79,7 @@ int main(void)
       GLCD_2hex(RTC_DATE);
       x = RTC_HOUR;                            // display AM/PM
       if (x < 0x80)
-        GLCD_string(1, 3, "¸å");
+        GLCD_string(1, 3, "ì „");
       else
         GLCD_string(1, 3, "?");
       GLCD_xy(1, 7);                           // display hour
@@ -90,19 +90,19 @@ int main(void)
       GLCD_2hex(RTC_SECOND);
       x = RTC_WEEKDAY;                         // display weekday
       if (x == 1)
-        GLCD_string(2, 5, "·©");
+        GLCD_string(2, 5, "ì¼");
       else if (x == 2)
-        GLCD_string(2, 5, "¶©");
+        GLCD_string(2, 5, "ì›”");
       else if (x == 3)
-        GLCD_string(2, 5, "ÑÁ");
+        GLCD_string(2, 5, "í™”");
       else if (x == 4)
-        GLCD_string(2, 5, "®");
+        GLCD_string(2, 5, "ìˆ˜");
       else if (x == 5)
-        GLCD_string(2, 5, "¡¢");
+        GLCD_string(2, 5, "ëª©");
       else if (x == 6)
-        GLCD_string(2, 5, "‹q");
+        GLCD_string(2, 5, "ê¸ˆ");
       else
-        GLCD_string(2, 5, "É¡");
+        GLCD_string(2, 5, "í† ");
       Delay_ms(100);
     }
 

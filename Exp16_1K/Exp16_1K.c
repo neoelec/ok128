@@ -23,28 +23,28 @@ int main(void)
   Beep();
 
   while (1) {
-    GLCD_string(0, 0, "OK-128 Ç¡Ëa V2.2");     // display screen 1
+    GLCD_string(0, 0, "OK-128 í‚¤íŠ¸ V2.2");   // display screen 1
     GLCD_string(1, 0, "   03/01/2005   ");
-    GLCD_string(2, 0, " ¬é‰ : ·E”â¶w  ");
-    GLCD_string(3, 0, " Ìe  : Ohm¬a   ");
+    GLCD_string(2, 0, " ì„¤ê³„ : ìœ¤ë•ìš©  ");
+    GLCD_string(3, 0, " íŒë§¤ : Ohmì‚¬   ");
     Delay_ms(5000);
 
-    GLCD_string(0, 0, "    Ñe” LCD    ");     // display screen 2
+    GLCD_string(0, 0, "    í˜„ëŒ€ LCD    ");   // display screen 2
     GLCD_string(1, 0, "  HG12605NY-LY  ");
     GLCD_string(2, 0, "                ");
-    GLCD_string(3, 0, "128x64 ‹aœÏ¢LCD");
+    GLCD_string(3, 0, "128x64 ê·¸ë˜í”½LCD");
     Delay_ms(5000);
 
-    GLCD_string(0, 0, " µw¢…/Ğe‹i Îa¯¡ ");     // display screen 3
+    GLCD_string(0, 0, " ì˜ë¬¸/í•œê¸€ í‘œì‹œ ");  // display screen 3
     GLCD_string(1, 0, "                ");
-    GLCD_string(2, 0, " 8x16•¡Ëa ASCII ");
-    GLCD_string(3, 0, "16x16•¡Ëa ¹¡ĞsÑw");
+    GLCD_string(2, 0, " 8x16ë„íŠ¸ ASCII ");
+    GLCD_string(3, 0, "16x16ë„íŠ¸ ì¡°í•©í˜•");
     Delay_ms(5000);
 
-    GLCD_string(0, 0, "   * ¤¶¸a *   ");     // display screen 4
-    GLCD_string(1, 0, " a·¡Ça¡Ïa¡­A¬á");
-    GLCD_string(2, 0, "   * ·¢Ó¡¸a *   ");
-    GLCD_string(3, 0, " a·¡Ça¡Å¥Ëa©œá");
+    GLCD_string(0, 0, "   * ë°°ìš°ì *   ");  // display screen 4
+    GLCD_string(1, 0, "ë§ˆì´í¬ë¡œí”„ë¡œì„¸ì„œ");
+    GLCD_string(2, 0, "   * ìµíˆì *   ");
+    GLCD_string(3, 0, "ë§ˆì´í¬ë¡œì½˜íŠ¸ë¡¤ëŸ¬");
     Delay_ms(5000);
 
     GLCD_xy(0, 0);
