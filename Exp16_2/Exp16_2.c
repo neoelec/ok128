@@ -128,10 +128,10 @@ int main(void)
   LCD_string(0xC0, " Display Number ");
 
   while (1) {
-    GLCD_string(0, 0, " ** º˝¿⁄«•Ω√ ** ");     // display 8-bit integer
-    GLCD_string(1, 0, "16¡¯ºˆ= 0x00    ");
-    GLCD_string(2, 0, "10¡¯ºˆ= 000     ");
-    GLCD_string(3, 0, " 2¡¯ºˆ= 00000000");
+    GLCD_string(0, 0, " ** Ïà´ÏûêÌëúÏãú ** "); // display 8-bit integer
+    GLCD_string(1, 0, "16ÏßÑÏàò= 0x00    ");
+    GLCD_string(2, 0, "10ÏßÑÏàò= 000     ");
+    GLCD_string(3, 0, " 2ÏßÑÏàò= 00000000");
     Beep();
 
     for (i = 1; i > 0; i++) {                  // integer number from 1 to 255
@@ -144,7 +144,7 @@ int main(void)
       Delay_ms(500);
     }
 
-    GLCD_string(0, 0, " **  ±∏±∏¥‹  ** ");     // display multiplication table(1)
+    GLCD_string(0, 0, " **  Íµ¨Íµ¨Îã®  ** ");  // display multiplication table(1)
     GLCD_string(1, 0, "                ");
     GLCD_string(2, 0, "   0 x 0 = 00   ");
     GLCD_string(3, 0, "                ");
@@ -161,7 +161,7 @@ int main(void)
         Delay_ms(1000);
       }
 
-    GLCD_string(0, 0, "** 2¿⁄∏Æ ∞ˆº¿ **");     // display multiplication table(2)
+    GLCD_string(0, 0, "** 2ÏûêÎ¶¨ Í≥±ÏÖà **"); // display multiplication table(2)
     GLCD_string(1, 0, "                ");
     GLCD_string(2, 0, " 00 x 00 = 0000 ");
     GLCD_string(3, 0, "                ");
