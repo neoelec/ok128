@@ -213,7 +213,7 @@ void GLCD_character(uint8_t character)
   }
 }
 
-void GLCD_string(uint8_t x, uint8_t y, uint8_t * string)
+void GLCD_string(uint8_t x, uint8_t y, char *string)
 {                                              /* display a string */
   xcharacter = x;
   ycharacter = y;

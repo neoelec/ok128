@@ -1087,7 +1087,7 @@ void GLCD_Korean(uint16_t Kcode)
   }
 }
 
-void GLCD_string(uint8_t x, uint8_t y, uint8_t * string)
+void GLCD_string(uint8_t x, uint8_t y, char *string)
 {                                              /* display a string */
   unsigned char character1;
   unsigned int character2;
