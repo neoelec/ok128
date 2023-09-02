@@ -6,7 +6,7 @@
 #include <avr/io.h>
 
 #include <OK128.h>
-#include "GLCD128.h"
+#include <GLCD128.h>
 
 int main(void)
 {

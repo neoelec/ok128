@@ -6,7 +6,7 @@
 #include <avr/io.h>
 
 #include <OK128.h>
-#include "GLCD128.h"
+#include <GLCD128.h>
 
 void GLCD_2hex(unsigned char number)
 {                                              /* display 2-digit hex number */
