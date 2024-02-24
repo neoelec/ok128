@@ -39,11 +39,12 @@
 #----------------------------------------------------------------------------
 
 
-PROJECT_PATH	:= $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+AVR_MK_FILE	:= $(realpath $(lastword $(MAKEFILE_LIST)))
+AVR_PATH	:= $(shell dirname $(AVR_MK_FILE))
 
 
 # MCU name
-MCU		:= atmega128
+MCU		?= atmega128
 
 
 # Processor frequency.
@@ -51,7 +52,7 @@ MCU		:= atmega128
 #     processor frequency. You can then use this symbol in your source code to
 #     calculate timings. Do NOT tack on a 'UL' at the end, this will be done
 #     automatically to create a 32-bit value in your source code.
-F_CPU		:= 16000000
+F_CPU		?= 16000000
 
 
 # Output format. (can be srec, ihex, binary)
@@ -63,7 +64,7 @@ FORMAT		:= ihex
 
 
 # VPATH variable
-VPATH		+= $(PROJECT_PATH)
+VPATH		+= $(AVR_PATH)
 
 
 # List C source files here. (C dependencies are automatically generated.)
@@ -83,21 +84,21 @@ ASRCS		+=
 # Optimization level, can be [0, 1, 2, 3, s].
 #     0 = turn off optimization. s = optimize for size.
 #     (Note: 3 is not always the best optimization level. See avr-libc FAQ.)
-OPT		:= s
+OPT		?= s
 
 
 # Debugging format.
 #     Native formats for AVR-GCC's -g are dwarf-2 [default] or stabs.
 #     AVR Studio 4.10 requires dwarf-2.
 #     AVR [Extended] COFF format requires stabs, plus an avr-objcopy run.
-DEBUG		:= dwarf-2
+DEBUG		?= dwarf-2
 
 
 # List any extra directories to look for include files here.
 #     Each directory must be seperated by a space.
 #     Use forward slashes for directory separators.
 #     For a directory that has spaces, enclose it in quotes.
-EXTRAINCDIRS	+= $(PROJECT_PATH)
+EXTRAINCDIRS	+= $(AVR_PATH)
 
 
 # Compiler flag to set the C Standard level.
