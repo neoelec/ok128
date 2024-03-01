@@ -1,12 +1,12 @@
-FRTOS_MK_FILE	:= $(realpath $(lastword $(MAKEFILE_LIST)))
-FRTOS_PATH	:= $(shell dirname $(FRTOS_MK_FILE))
+FRTOS_MK_FILE		:= $(realpath $(lastword $(MAKEFILE_LIST)))
+FRTOS_PATH		:= $(shell dirname $(FRTOS_MK_FILE))
 
-MCU		:= atmega128
-F_CPU		:= 16000000
+MCU			:= atmega128
+F_CPU			:= 16000000
 
-FRTOSLIB	:= $(FRTOS_PATH)/libs
-EXTRAINCDIRS	+= $(FRTOSLIB)
-VPATH		+= $(FRTOSLIB)
+FRTOSLIB		:= $(FRTOS_PATH)/libs
+EXTRAINCDIRS		+= $(FRTOSLIB)
+VPATH			+= $(FRTOSLIB)
 
 FREERTOS_PATH		:= $(HOME)/iHDD00/07.WORKSPACE/FreeRTOS-LTS/FreeRTOS
 FREERTOS_KERNEL_PATH	:= $(FREERTOS_PATH)/FreeRTOS-Kernel
@@ -22,3 +22,4 @@ VPATH			+= $(FREERTOS_PORT_PATH)
 CSRCS			+= port.c
 
 include $(FRTOS_PATH)/../avr.mk
+include $(FRTOS_PATH)/../avrdude.mk
