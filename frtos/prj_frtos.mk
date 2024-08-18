@@ -1,10 +1,10 @@
-FRTOS_MK_FILE		:= $(realpath $(lastword $(MAKEFILE_LIST)))
-FRTOS_PATH		:= $(shell dirname $(FRTOS_MK_FILE))
+PRJ_FRTOS_MK_FILE	:= $(realpath $(lastword $(MAKEFILE_LIST)))
+PRJ_FRTOS_MK_DIR	:= $(shell dirname $(PRJ_FRTOS_MK_FILE))
 
 MCU			:= atmega128
 F_CPU			:= 16000000
 
-FRTOSLIB		:= $(FRTOS_PATH)/libs
+FRTOSLIB		:= $(PRJ_FRTOS_MK_DIR)/libs
 EXTRAINCDIRS		+= $(FRTOSLIB)
 VPATH			+= $(FRTOSLIB)
 
@@ -21,5 +21,4 @@ EXTRAINCDIRS		+= $(FREERTOS_PORT_PATH)
 VPATH			+= $(FREERTOS_PORT_PATH)
 CSRCS			+= port.c
 
-include $(FRTOS_PATH)/../avr.mk
-include $(FRTOS_PATH)/../avrdude.mk
+include $(MK_RACCOON_DIR)/gcc_avr.mk

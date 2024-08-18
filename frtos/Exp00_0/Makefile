@@ -2,4 +2,4 @@ TARGET		:= Exp00_0
 
 CSRCS		:= $(TARGET).c
 
-include ../frtos.mk
+include ../prj_frtos.mk
