@@ -37,4 +37,6 @@ EXTRAINCDIRS		+= $(FREERTOS_PORT_PATH)
 VPATH			+= $(FREERTOS_PORT_PATH)
 CSRCS			+= port.c
 
+CFLAGS			+= -Wall -Werror -Wextra -Wno-unused-parameter
+
 include $(MK_RACCOON_DIR)/gcc_avr.mk

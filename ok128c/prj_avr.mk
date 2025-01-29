@@ -24,4 +24,6 @@ OK128CLIB		:= $(PRJ_AVR_MK_DIR)/libs
 EXTRAINCDIRS		+= $(OK128CLIB)
 VPATH			+= $(OK128CLIB)
 
+CFLAGS			+= -Wall -Werror -Wextra -Wno-unused-parameter
+
 include $(MK_RACCOON_DIR)/gcc_avr.mk
